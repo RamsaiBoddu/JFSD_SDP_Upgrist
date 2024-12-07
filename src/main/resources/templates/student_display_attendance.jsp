@@ -172,7 +172,7 @@
         async function fetchCourseMappingData(studentId) {
     try {
         // Ensure the URL uses `studentId` as the query parameter
-        const response = await fetch(`http://localhost:1349/course/course-mapping?studentId=${studentId}`);
+        const response = await fetch(`/course/course-mapping?studentId=${studentId}`);
         
         if (response.ok) {
             const courseMappings = await response.json();

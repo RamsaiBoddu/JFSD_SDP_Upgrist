@@ -366,7 +366,7 @@
                 phoneNumber: document.getElementById("phoneNumber").value
             };
 
-            const url = "http://localhost:1349/user/signup";
+            const url = "/user/signup";
 
             fetch(url, {
                 method: "POST",

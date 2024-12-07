@@ -266,7 +266,7 @@
     let users = []; // To store user data
 
     // Fetch users from the API
-    fetch('http://localhost:1349/user/allusers')
+    fetch('/user/allusers')
         .then(response => response.json())
         .then(data => {
             users = data;
@@ -333,7 +333,7 @@
             parentEmail: form.parentemail.value 
         };
         // Send the updated user data to the backend
-        fetch('http://localhost:1349/user/update', {
+        fetch('/user/update', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
@@ -355,7 +355,7 @@
     // Delete user
     function deleteUser(username) {
         if (confirm('Are you sure you want to delete this user?')) {
-            fetch(`http://localhost:1349/user/delete`, {
+            fetch(`/user/delete`, {
                 method: 'POST', 
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: username }) // Send username for deletion

@@ -302,7 +302,7 @@
                 password: document.getElementById("password").value
             });
 
-            const url = "https://upgrist.up.railway.app/user/validate";
+            const url = "/user/validate";
 
             callApi("POST", url, data, handleLoginResponse);
         }

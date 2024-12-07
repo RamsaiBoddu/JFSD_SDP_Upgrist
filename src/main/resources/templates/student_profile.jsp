@@ -234,7 +234,7 @@
         async function fetchUserInfo(username) {
             try {
                 // Call the backend API to fetch user information
-                const response = await fetch(`http://localhost:1349/getusers/info?username=${username}`);
+                const response = await fetch(`/getusers/info?username=${username}`);
 
                 // Handle the response
                 if (response.ok) {

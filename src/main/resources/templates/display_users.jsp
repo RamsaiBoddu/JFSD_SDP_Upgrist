@@ -416,7 +416,7 @@
 
     <script>
         // Fetch and display users
-        fetch('http://localhost:1349/user/allusers')
+        fetch('/user/allusers')
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById('userTableBody');
@@ -481,7 +481,7 @@
                 parentEmail: this.parentemail.value
             };
 
-            fetch('http://localhost:1349/user/update', {
+            fetch('/user/update', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -503,7 +503,7 @@
         // Delete user
         function deleteUser(username) {
             if (confirm('Are you sure you want to delete this user?')) {
-                fetch('http://localhost:1349/user/delete', {
+                fetch('/user/delete', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username: username })
@@ -549,7 +549,7 @@
             	};
 
 
-            fetch('http://localhost:1349/user/signup', {
+            fetch('/user/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

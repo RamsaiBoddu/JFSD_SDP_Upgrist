@@ -318,7 +318,7 @@
             } else if (response && response.trim().toLowerCase() === "authorized user - faculty") {
                 window.location.href = "/teacher";
             } else if (response && response.trim().toLowerCase() === "authorized user - admin") {
-                window.location.href = "/admin";
+                window.location.href = "admin";
             } else {
                 console.error("Login failed: Unauthorized User");
                 alert("Invalid login credentials. Please try again.");

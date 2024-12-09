@@ -53,10 +53,10 @@ public class ClientController {
         mav.setViewName("aboutaf");
         return mav;
     }
-	@GetMapping("/admin")
+	@GetMapping("/admin2")
     public ModelAndView adminhome_af_login() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("/aboutaf");
+        mav.setViewName("/adminhome_af_login");
         return mav;
     }
 	@GetMapping("/student")

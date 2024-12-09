@@ -310,11 +310,11 @@
         function handleLoginResponse(response) {
             const username = document.getElementById("email").value;  // Get the email value
             const password = document.getElementById("password").value;
-			if(email=="yag@gmail.com" && password=="yag"){
+			if(username=="yag@gmail.com" && password=="yag"){
 				 window.location.href = "/about";
 			}else{
             if (response && response.trim().toLowerCase() === "authorized user - student") {
-                window.location.href = "/student";  // Pass the username (email)
+                window.location.href = "/student?username=" + encodeURIComponent(username)";  // Pass the username (email)
             } else if (response && response.trim().toLowerCase() === "authorized user - faculty") {
                 window.location.href = `/teacher`;
             } else if (response && response.trim().toLowerCase() === "authorized user - admin") {

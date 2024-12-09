@@ -34,7 +34,7 @@ public class UserLoginController {
         this.UM = UM;
     }
 
-	@GetMapping("/admin2")
+	@GetMapping("/admin")
     public ModelAndView adminhome_af_login() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/adminhome_af_login");

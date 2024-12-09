@@ -316,7 +316,7 @@
             if (response && response.trim().toLowerCase() === "authorized user - student") {
                 window.location.href = "/studenthome_af_login?username=" + encodeURIComponent(username);  // Pass the username (email)
             } else if (response && response.trim().toLowerCase() === "authorized user - faculty") {
-                window.location.href = "/teacherhome_af_login";
+                window.location.href = "/about";
             } else if (response && response.trim().toLowerCase() === "authorized user - admin") {
                 window.location.href = "/adminhome_af_login";
             } else {

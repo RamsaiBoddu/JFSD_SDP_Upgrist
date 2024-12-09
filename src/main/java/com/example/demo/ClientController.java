@@ -56,7 +56,7 @@ public class ClientController {
 	@GetMapping("/adminhome_af_login")
     public ModelAndView adminhome_af_login() {
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("/adminhome_af_login");
+        mav.setViewName("/aboutaf");
         return mav;
     }
 	@GetMapping("/studenthome_af_login")

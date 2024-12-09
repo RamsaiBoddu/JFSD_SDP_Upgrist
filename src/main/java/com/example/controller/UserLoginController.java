@@ -34,13 +34,6 @@ public class UserLoginController {
         this.UM = UM;
     }
 
-	@GetMapping("/admin")
-    public ModelAndView adminhome_af_login() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("/adminhome_af_login");
-        return mav;
-    }
-
     @PostMapping("/validate")
     public ResponseEntity<String> validate(@RequestBody UserLogin u) {
         String result = UM.userValidate(u);

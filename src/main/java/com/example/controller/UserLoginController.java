@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,12 +33,7 @@ public class UserLoginController {
         this.usermanager = usermanager;
         this.UM = UM;
     }
-	@GetMapping("/admin")
-    public ModelAndView adminhome_af_login() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("/adminhome_af_login");
-        return mav;
-    }
+	
     @PostMapping("/validate")
     public ResponseEntity<String> validate(@RequestBody UserLogin u) {
         String result = UM.userValidate(u);

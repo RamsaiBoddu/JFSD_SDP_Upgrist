@@ -53,19 +53,19 @@ public class ClientController {
         mav.setViewName("aboutaf");
         return mav;
     }
-	@GetMapping("/adminhome_af_login")
+	@GetMapping("/admin")
     public ModelAndView adminhome_af_login() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/aboutaf");
         return mav;
     }
-	@GetMapping("/studenthome_af_login")
+	@GetMapping("/student")
     public ModelAndView studenthome_af_login() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/studenthome_af_login");
         return mav;
     }
-	@GetMapping("/teacherhome_af_login")
+	@GetMapping("/teacher")
     public ModelAndView teacherhome_af_login() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("/teacherhome_af_login");

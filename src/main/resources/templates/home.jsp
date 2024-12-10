@@ -290,7 +290,9 @@
                 </div>
                 <h2 class="card-title">View Grades</h2>
                 <p class="card-description">Check your academic performance and progress</p>
+                <a href="/login">
                 <button class="card-button">View Grades</button>
+                </a>
             </div>
 
             <!-- Marks Card -->
@@ -303,7 +305,9 @@
                 </div>
                 <h2 class="card-title">View Marks</h2>
                 <p class="card-description">Access your examination scores and results</p>
+                <a href="/login">
                 <button class="card-button">View Marks</button>
+                </a>
             </div>
 
             <!-- Details Card -->
@@ -316,7 +320,9 @@
                 </div>
                 <h2 class="card-title">View Details</h2>
                 <p class="card-description">Review your personal information and profile</p>
+                <a href="/login">
                 <button class="card-button">View Details</button>
+                </a>
             </div>
 
             <!-- Attendance Card -->
@@ -331,7 +337,9 @@
                 </div>
                 <h2 class="card-title">View Attendance</h2>
                 <p class="card-description">Track your attendance records and history</p>
+                <a href="/login">
                 <button class="card-button">View Attendance</button>
+                </a>
             </div>
         </div>
     </section>

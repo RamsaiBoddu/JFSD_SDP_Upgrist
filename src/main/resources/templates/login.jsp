@@ -253,7 +253,7 @@
             <p>Sign in to continue to your account</p>
         </div>
 
-        <form onsubmit="login2(event)">
+        <form>
             <div class="form-group">
                 <label for="email" class="form-label">Email Address</label>
                 <input 
@@ -277,10 +277,10 @@
                     required
                 >
             </div>
-
+		<a href="/admin">
             <button type="submit" class="login-button">
                 Sign In
-            </button>
+            </button></a>
 
             <div class="signup-link">
                 Don't have an account? <a href="/signup">Sign up</a>

@@ -51,11 +51,11 @@ public class UserLoginController {
 
         // Handle the validation response and redirect accordingly
         if ("Authorized User - Admin".equals(validationResponse)) {
-            return new ModelAndView("redirect:/adminhome_af_login");
+            return new ModelAndView("redirect:/admin");
         } else if ("Authorized User - Student".equals(validationResponse)) {
-            return new ModelAndView("redirect:/studenthome_af_login?username=" + email);
+            return new ModelAndView("redirect:/student=" + email);
         } else if ("Authorized User - Faculty".equals(validationResponse)) {
-            return new ModelAndView("redirect:/teacherhome_af_login");
+            return new ModelAndView("redirect:/teacher");
         } else if ("Unauthorized User".equals(validationResponse)) {
             ModelAndView modelAndView = new ModelAndView("login");
             modelAndView.addObject("error", "Invalid login credentials. Please try again.");

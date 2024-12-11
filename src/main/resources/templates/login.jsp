@@ -253,7 +253,7 @@
             <p>Sign in to continue to your account</p>
         </div>
 
-        <form>
+        <form action="/user/login" method="post">
             <div class="form-group">
                 <label for="email" class="form-label">Email Address</label>
                 <input 

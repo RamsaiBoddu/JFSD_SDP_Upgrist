@@ -290,6 +290,8 @@
 
     <script>
 
+
+
          function login2(event) {
         event.preventDefault();
 
@@ -297,8 +299,12 @@
         const password = document.getElementById("password").value;
 
         // Check if username and password are both "admin"
-        if (username === "admin" && password === "admin") {
-            window.location.href = "/admin";
+       if (username === "admin" && password === "admin") {
+            const adminForm = document.createElement('form');
+            adminForm.method = 'POST';
+            adminForm.action = '/admin';
+            document.body.appendChild(adminForm);
+            adminForm.submit();
             return;
         }
 

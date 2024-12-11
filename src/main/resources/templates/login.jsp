@@ -253,7 +253,7 @@
             <p>Sign in to continue to your account</p>
         </div>
 
-        <form onsubmit="/admin">
+        <form onsubmit="login2(event)">
             <div class="form-group">
                 <label for="email" class="form-label">Email Address</label>
                 <input 
@@ -289,6 +289,28 @@
     </main>
 
     <script>
+
+         function login2(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Check if username and password are both "admin"
+        if (username === "admin" && password === "admin") {
+            window.location.href = "/admin";
+            return;
+        }
+
+        const data = JSON.stringify({
+            username: username,
+            password: password
+        });
+
+        const url = "/user/validate";
+
+        callApi("POST", url, data, handleLoginResponse);
+    }
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');

@@ -33,6 +33,41 @@ public class UserLoginController {
         this.usermanager = usermanager;
         this.UM = UM;
     }
+
+	 @PostMapping("/login")  // Handle login requests at /user/login
+    public ModelAndView login(@RequestParam("email") String email, 
+                              @RequestParam("password") String password) {
+        
+        // Create a UserLogin object to pass to the manager for validation
+        UserLogin userLogin = new UserLogin();
+        // Assuming UserLogin has a constructor
+        userLogin.setUsername(email);
+        userLogin.setPassword(password);
+
+        // Call the userValidate method from UserManager
+        String validationResponse = UM.userValidate(userLogin);
+
+        // Handle the validation response and redirect accordingly
+        if ("Authorized User - Admin".equals(validationResponse)) {
+            return new ModelAndView("redirect:/adminhome_af_login");
+        } else if ("Authorized User - Student".equals(validationResponse)) {
+            return new ModelAndView("redirect:/studenthome_af_login?username=" + email);
+        } else if ("Authorized User - Faculty".equals(validationResponse)) {
+            return new ModelAndView("redirect:/teacherhome_af_login");
+        } else if ("Unauthorized User".equals(validationResponse)) {
+            ModelAndView modelAndView = new ModelAndView("login");
+            modelAndView.addObject("error", "Invalid login credentials. Please try again.");
+            return modelAndView;
+        } else if ("Invalid Role".equals(validationResponse)) {
+            ModelAndView modelAndView = new ModelAndView("login");
+            modelAndView.addObject("error", "The user role is invalid.");
+            return modelAndView;
+        } else {
+            ModelAndView modelAndView = new ModelAndView("login");
+            modelAndView.addObject("error", "An unknown error occurred. Please try again.");
+            return modelAndView;
+        }
+    }
 	
     @PostMapping("/validate")
     public ResponseEntity<String> validate(@RequestBody UserLogin u) {

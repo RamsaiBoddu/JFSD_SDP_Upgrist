@@ -54,9 +54,11 @@ public class UserLoginController {
 		mv.setViewName("adminhome_af_login");
             	return mv;
         } else if ("Authorized User - Student".equals(validationResponse)) {
-            return new ModelAndView("redirect:/student=" + email);
+		mv.setViewName("studenthome_af_login"+email);
+            return mv;
         } else if ("Authorized User - Faculty".equals(validationResponse)) {
-            return new ModelAndView("redirect:/teacher");
+            mv.setViewName("teacherhome_af_login");
+            	return mv;
         } else if ("Unauthorized User".equals(validationResponse)) {
             ModelAndView modelAndView = new ModelAndView("login");
             modelAndView.addObject("error", "Invalid login credentials. Please try again.");

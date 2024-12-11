@@ -48,10 +48,11 @@ public class UserLoginController {
 
         // Call the userValidate method from UserManager
         String validationResponse = UM.userValidate(userLogin);
-
+	ModelAndView mv=new ModelAndView();
         // Handle the validation response and redirect accordingly
         if ("Authorized User - Admin".equals(validationResponse)) {
-            return new ModelAndView("redirect:/admin");
+		mv.setViewName("adminhome_af_login");
+            	return mv;
         } else if ("Authorized User - Student".equals(validationResponse)) {
             return new ModelAndView("redirect:/student=" + email);
         } else if ("Authorized User - Faculty".equals(validationResponse)) {

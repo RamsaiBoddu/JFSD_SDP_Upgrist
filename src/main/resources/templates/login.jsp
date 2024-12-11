@@ -253,7 +253,7 @@
             <p>Sign in to continue to your account</p>
         </div>
 
-        <form onsubmit="login(event)">
+        <form onsubmit="/admin">
             <div class="form-group">
                 <label for="email" class="form-label">Email Address</label>
                 <input 

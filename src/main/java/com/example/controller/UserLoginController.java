@@ -54,8 +54,9 @@ public class UserLoginController {
 		mv.setViewName("adminhome_af_login");
             	return mv;
         } else if ("Authorized User - Student".equals(validationResponse)) {
-		mv.setViewName("studenthome_af_login"+email);
-            return mv;
+		String redirectUrl = "redirect:/studenthome_af_login?username=" + email;
+    mv.setViewName(redirectUrl);  // Redirect with the email as a query parameter
+    return mv;
         } else if ("Authorized User - Faculty".equals(validationResponse)) {
             mv.setViewName("teacherhome_af_login");
             	return mv;

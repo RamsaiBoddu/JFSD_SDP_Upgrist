@@ -257,7 +257,7 @@
             <div class="form-group">
                 <label for="email" class="form-label">Email Address</label>
                 <input 
-                    type="email" 
+                    type="text" 
                     id="email" 
                     name="email" 
                     class="form-input" 
